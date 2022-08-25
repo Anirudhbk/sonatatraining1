@@ -21,12 +21,8 @@ public class CalTest {
 		   
 		
 	}
-	@Test
-	public void addTest2() {
-		Calculator c1 = new Calculator();
-		int x = c1.div(1,1);
-		   assertThrows(ArithmeticException.class,()->c1.div(2,1),"it is an error");
+	
 	
 	} 
-	}
+	
 
