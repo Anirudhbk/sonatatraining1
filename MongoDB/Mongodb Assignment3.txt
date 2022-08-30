@@ -1,0 +1,27 @@
+Aggregate Exercise: 
+
+1.Count the number of cuisines from each country
+select count(1) as Count, cuisine
+from rest
+group by cuisine
+
+ db.rest.aggregate([{"$group":{_id :"$cuisine",count:{$sum:1}}}])
+
+2.Find the average score of every cuisines
+db.rest.aggregate([
+    { $match: {  "cuisine": "German" } },
+    { $unwind: "$grades" },
+    { $group: {
+        "_id": "$name",
+        "avg_score": { $avg: "$grades.score" },
+        "sum_score": { $sum: "$grades.score" }
+        }
+    },
+    { $sort: { "sum_score": -1 } },
+    { $limit: 5 }
+]).pretty()
+
+MapReduce :
+
+1.Count the number of cuisines from each country
+
