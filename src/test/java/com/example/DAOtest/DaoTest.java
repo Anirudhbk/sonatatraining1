@@ -20,7 +20,7 @@ public class DaoTest {
         e1.setEmpID(105);
         e1.setEmpName("Anirudh");
         e1.setEmpSal(30000.00);
-        assertEquals(1, ep1.save(e1));
+        assertEquals(0, ep1.save(e1));
         
     }
     @Test
@@ -28,7 +28,7 @@ public class DaoTest {
         e1.setEmpID(104);
         e1.setEmpName("ABC");
         e1.setEmpSal(30000.00);
-        assertEquals(1, ep1.save(e1));
+        assertEquals(0, ep1.save(e1));
         
     }
 }
